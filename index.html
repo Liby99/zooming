@@ -1,57 +1,56 @@
+<!DOCTYPE html>
 <html>
-
 <head>
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="js/zooming.js"></script>
     <style>
         
         body {
             font-family: sans-serif;
         }
-
+        
         h6 {
             margin: 0;
         }
-
+        
         .zoom-outer {
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
-
+        
         .zoom-container {
             display: flex;
             flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
             align-items: flex-start;
             align-content: flex-start;
         }
-
+        
         .zoom-card {
             width: calc(33.333% - 40px);
             height: calc(25% - 40px);
             margin: 10px;
             padding: 10px;
+            overflow: hidden;
             
             transition: all 0.2s;
-            background-color: rgba(245, 245, 245, 1);
+            background-color: rgba(65, 65, 65, 0.1);
             
             cursor: pointer;
         }
         
         .zoom-card:hover {
-            background-color: rgba(179, 229, 241, 1);
+            background-color: rgba(0, 72, 124, 0.1);
         }
         
         .zoom-card:active {
-            background-color: rgb(150, 198, 236);
-        }
-
-        .zoom-card-inner {
-            
+            background-color: rgba(0, 72, 124, 0.2);
         }
     </style>
 </head>
-
 <body>
     <div id="zoomer" class="zoom-outer">
         <div class="zoom-container">
@@ -67,9 +66,115 @@
                 <h6>Title 3</h6>
                 <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
             </div>
-            <div class="zoom-card">
+            <div class="zoom-card" id="zoom-card-4">
                 <h6>Title 4</h6>
                 <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                <div id="zoomer-2" class="zoom-outer">
+                    <div class="zoom-container">
+                        <div class="zoom-card">
+                            <h6>Title 1</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 2</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 3</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 4</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                            
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 5</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 6</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 7</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 8</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 9</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                            <div id="zoomer-3" class="zoom-outer">
+                                <div class="zoom-container">
+                                    <div class="zoom-card">
+                                        <h6>Title 1</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 2</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 3</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 4</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                        
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 5</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 6</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 7</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 8</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 9</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 10</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 11</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                    <div class="zoom-card">
+                                        <h6>Title 12</h6>
+                                        <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 10</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 11</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                        </div>
+                        <div class="zoom-card">
+                            <h6>Title 12</h6>
+                            <p>saldfkj lasdkfjla lkdjflak slkdfl sdlflaskd flkas dl</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="zoom-card">
                 <h6>Title 5</h6>
@@ -105,131 +210,17 @@
             </div>
         </div>
     </div>
-
     <script>
         $(document).ready(function () {
-            (function ($elem) {
-
-                // Static variables
-                const speed = 0.03;
-                const width = $elem.innerWidth();
-                const height = $elem.innerHeight();
-                
-                // Instance Elements
-                const $container = $elem.children(".zoom-container");
-                const $cards = $container.children();
-                const containerWidth = $container.width();
-                const containerHeight = $container.height();
-                const cardMarginLeft = parseInt($cards.css("margin-left"));
-                const cardMarginRight = parseInt($cards.css("margin-right"));
-                const cardMarginTop = parseInt($cards.css("margin-top"));
-                const cardMarginBottom = parseInt($cards.css("margin-bottom"));
-                const cardHorizontalMargin = cardMarginLeft + cardMarginRight;
-                const cardVerticalMargin = cardMarginTop + cardMarginBottom;
-                const cardWidth = $cards.outerWidth() + cardHorizontalMargin;
-                const cardHeight = $cards.outerHeight() + cardVerticalMargin;
-                
-                // Ratio
-                const widthRatio = cardWidth / width;
-                const heightRatio = cardHeight / height;
-                const initRatio = cardWidth / cardHeight;
-                const finalRatio = width / height;
-                
-                // Instance Variables
-                var interval = undefined, timeout = undefined;
-                var t = 0;
-                var $currCard = undefined;
-                var currWidth = containerWidth, currHeight = containerHeight;
-                var targetWidth = containerWidth, targetHeight = containerHeight;
-                var currX = 0, currY = 0, targetX = 0, targetY = 0;
-                
-                // Cache card initial position
-                $cards.each(function () {
-                    var ox = $(this).offset().left - $container.offset().left - cardMarginLeft;
-                    var oy = $(this).offset().top - $container.offset().top - cardMarginTop;
-                    $(this).attr("x", ox / $container.innerWidth());
-                    $(this).attr("y", oy / $container.innerHeight());
-                });
-                
-                /*
-                 * Zoom card mousewheel callback, update the target values
-                 */
-                $cards.on("mousewheel", function (event) {
-                    event.stopPropagation();
-                    event.preventDefault();
-                    
-                    // Cache delta y
-                    var dy = event.originalEvent.deltaY;
-                    
-                    // Cache card value
-                    var $card = $(this);
-                    
-                    // Modify t
-                    t += dy * 0.01;
-                    t = Math.max(Math.min(1.1, t), -0.1);
-                    
-                    // Update target width and target height
-                    targetWidth = width + (width / widthRatio - width) * t;
-                    targetHeight = height + (height / heightRatio - height) * t;
-                    
-                    // Update
-                    targetX = -width * parseFloat($card.attr("x")) / widthRatio * t;
-                    targetY = -height * parseFloat($card.attr("y")) / heightRatio * t;
-                    
-                    // Set snapping
-                    clearTimeout(timeout);
-                    timeout = setTimeout(function() {
-                        if (t > widthRatio) {
-                            
-                            // Update t
-                            t = 1;
-                            
-                            // Set target position and scale
-                            targetX = -width * parseFloat($card.attr("x")) / widthRatio;
-                            targetY = -height * parseFloat($card.attr("y")) / heightRatio;
-                            targetWidth = width / widthRatio;
-                            targetHeight = height / heightRatio;
-                            
-                            $card.trigger("span");
-                        }
-                        else {
-                            
-                            // Update t
-                            t = 0;
-                            
-                            // First set target position and scale
-                            targetY = 0;
-                            targetX = 0;
-                            targetWidth = width;
-                            targetHeight = height;
-                            
-                            $card.trigger("collapse");
-                        }
-                    }, 50);
-                });
-                
-                /**
-                 * Constant updating curr values and update the ui
-                 */
-                interval = setInterval(function () {
-                    
-                    // Scale the container
-                    currWidth += (targetWidth - currWidth) * speed;
-                    currHeight += (targetHeight - currHeight) * speed;
-                    $container.width(currWidth);
-                    $container.height(currHeight);
-                    
-                    // Move the container
-                    currX += (targetX - currX) * speed;
-                    currY += (targetY - currY) * speed;
-                    $container.css({
-                        "margin-top": currY,
-                        "margin-left": currX
-                    });
-                }, 10);
-            })($("#zoomer"));
+            $("#zoomer").height($(window).height() - 20);
+            new Zooming($("#zoomer"));
+            new Zooming($("#zoomer-2"));
+            new Zooming($("#zoomer-3"));
+            $(".zoom-card").on("span", function (event) {
+                event.stopPropagation();
+                console.log($(this).children("h6").html());
+            });
         });
     </script>
 </body>
-
 </html>
