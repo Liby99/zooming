@@ -89,13 +89,13 @@ function Zooming ($elem) {
                 "margin-left": currX
             });
         }
-        if (diff > 1) {
+        if (diff > 5) {
             eventTriggered = false;
             $cards.children(".zoom-outer").trigger("resize");
         }
         else {
             if (!eventTriggered && $currCard) {
-                if (currWidth > width / 2) {
+                if (currWidth > width / widthRatio / 2) {
                     $currCard.trigger("span");
                 }
                 else {
