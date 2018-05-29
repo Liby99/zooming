@@ -54,14 +54,10 @@ function Zooming ($elem) {
         initRatio = cardWidth / cardHeight;
         finalRatio = width / height;
         
-        currWidth = containerWidth;
-        currHeight = containerHeight;
         targetWidth = containerWidth;
         targetHeight = containerHeight;
-        currX = 0;
-        currY = 0;
-        targetX = 0;
-        targetY = 0;
+        currWidth = containerWidth;
+        currHeight = containerHeight;
         
         // Cache card initial position
         $cards.each(function () {
@@ -106,6 +102,22 @@ function Zooming ($elem) {
         }
     }
     
+    function collapse () {
+        t = 0;
+        targetY = 0;
+        targetX = 0;
+        targetWidth = width;
+        targetHeight = height;
+    }
+    
+    function span ($card) {
+        t = 1;
+        targetX = -width * parseFloat($card.attr("x")) / widthRatio;
+        targetY = -height * parseFloat($card.attr("y")) / heightRatio;
+        targetWidth = width / widthRatio;
+        targetHeight = height / heightRatio;
+    }
+    
     $elem.on("resize", function (event) {
         event.stopPropagation();
         event.preventDefault();
@@ -114,6 +126,14 @@ function Zooming ($elem) {
     
     $elem.on("mousewheel", function (event) {
         event.stopPropagation();
+    });
+    
+    $elem.on("triggerCollapse", function (event) {
+        
+    });
+    
+    $elem.on("triggerSpan", function (event, $card) {
+        
     });
     
     /*
@@ -151,26 +171,10 @@ function Zooming ($elem) {
     
     $cards.on("mousewheelrelease", function () {
         if (t > widthRatio) {
-            
-            // Update t
-            t = 1;
-            
-            // Set target position and scale
-            targetX = -width * parseFloat($(this).attr("x")) / widthRatio;
-            targetY = -height * parseFloat($(this).attr("y")) / heightRatio;
-            targetWidth = width / widthRatio;
-            targetHeight = height / heightRatio;
+            span($(this));
         }
         else {
-            
-            // Update t
-            t = 0;
-            
-            // First set target position and scale
-            targetY = 0;
-            targetX = 0;
-            targetWidth = width;
-            targetHeight = height;
+            collapse();
         }
     });
     
